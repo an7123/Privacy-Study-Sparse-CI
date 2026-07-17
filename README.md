@@ -1,4 +1,4 @@
-# Sparse collaborative inference: positions vs values leakage (minimal)
+# Sparse collaborative inference: positions vs values leakage.
 
 A top-$k$ sparse activation transmits two things — the retained **values** and the **positions**
 (the support) that locate them. This ~150-line script isolates each and trains a learned inverse to
