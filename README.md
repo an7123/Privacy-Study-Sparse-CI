@@ -4,20 +4,6 @@ A top-$k$ sparse activation transmits two things — the retained **values** and
 (the support) that locate them. This ~150-line script isolates each and trains a learned inverse to
 reconstruct the input from it, at a ResNet-18 split at `layer2` on TinyImageNet.
 
-**Finding:** the *positions* carry nearly all the leakage. Positions-only (a binary mask, all values
-discarded) reconstructs almost as well as the full sparse code, while the values scattered onto random
-positions collapse to the dataset floor.
-
-Representative output (TinyImageNet, 95% sparsity, learned inverse):
-
-```
-probe                 rate(bits/dim)      SSIM
-dense                         16.000     0.559
-topk_values                    1.086     0.444
-positions_only                 0.286     0.433
-values_on_random               1.086     0.142
-```
-
 ## Setup
 
 ```bash
